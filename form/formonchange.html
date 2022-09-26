@@ -1,0 +1,57 @@
+<!Doctype html>
+<html lang="en">
+<head>
+	<title>Basic_js</title>
+</head>
+<body>
+	<div>
+	     <label>Enter the Number:</label>
+	     <input type="number" name="num1" id="num1" onchange="first()"/>
+	</div>
+	<div>
+	     <label>Choose Number</label>
+	     <select name="num2" id="num2" onchange="second(this.value)"></select>
+	</div>
+	<div>
+		<ul id="listid"></ul>
+	</div>
+	
+	
+<script type="text/javascript">
+	
+		function first(){
+			var a=document.getElementById("num1").value;
+			var b=document.getElementById("num1");
+			var c=document.getElementById("num2");
+			if(a<=0 || a>10){
+				alert("Enter number between 1 to 10");
+				b.value="";	
+			}
+			else{
+				var es='';
+				es+='<option value="">--choose--</option>';
+				for(var i=1;i<=a;i++)
+				{
+					es+='<option value="'+i+'">'+i+'</option>';
+				}
+				
+				c.innerHTML=es;
+			}
+		}
+		
+		function second(list){
+		if(list==""||list==null)
+		{
+			alert("choose number");
+		}
+		else{
+			var es='';
+			for(var i=1;i<=list;i++){
+				es+='<li>'+i+'</li>';
+			}
+			document.getElementById("listid").innerHTML=es;
+		}
+	}
+</script>	     	
+</body>
+</html>

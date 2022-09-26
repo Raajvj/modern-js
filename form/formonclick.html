@@ -1,0 +1,87 @@
+<!Doctype html>
+<html lang="en">
+<head>
+	<title>Basic_javascript</title>
+</head>
+<body>
+<div>
+<label>Choose number:</label>
+<input type="number" name="num1" id="num1"/>
+<button type="button" name="btn1" id="btn1" onclick="first()">Click</button>
+</div>
+<div>
+<label>Choose Number</label>
+<select type="num2" id="num2"></select>
+<button type="button" name="btn2" id="btn2" onclick="second()">Select</button>
+<button type="button" name="btn3" id="btn3" onclick="third()">Reset</button>
+</div>
+<div>
+	<ul id="ulid"></ul>
+</div>
+<script type="text/javascript">
+	function first(){
+		var a=document.getElementById("num1").value;
+		var b=document.getElementById("num1");
+		var c=document.getElementById("btn1");
+		
+		if(a<=0 || a>100){
+			alert("Choose number between 1 to 100");
+			b.value="";
+		}
+		else{
+			var es='';
+			es+='<option value="">--select--</option>';
+			for(var i=1;i<=a;i++){
+				es+='<option value="'+i+'">'+i+'</option>';
+			}
+			document.getElementById("num2").innerHTML=es;
+		}
+	}
+
+		function second(){
+			
+			var d=document.getElementById("num2").value;
+			var lis=document.getElementById("ulid");
+			
+			if(d== "" || d== null){
+				alert("Choose a Number");
+			}
+			else{
+				var es='';
+				for(var i=1;i<=d;i++){
+					es+='<li>'+i+'</li>';
+				}
+				lis.innerHTML=es;
+			}
+			
+		}
+
+		function third(){
+			document.getElementById("num1").value="";
+			document.getElementById("num2").innerHTML="";
+			document.getElementById("ulid").innerHTML="";
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
